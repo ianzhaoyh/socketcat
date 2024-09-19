@@ -11,4 +11,4 @@ def TestFunction(*args, **kwargs):
 main_server = SocketCatRPC('0.0.0.0', 20049, trustid)
 main_server.add_function(TestFunction)
 
-main_server.start()
+main_server.start()  #modified
