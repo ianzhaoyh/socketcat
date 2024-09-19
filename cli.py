@@ -6,14 +6,15 @@ from socketcat import SocketCatServer, SocketCatClient
 def start_server(address, port, trust_id):
     print(f"Starting server at {address}:{port}")
     main_server = SocketCatServer(address, port, trust_id)
-    main_server.start()
+    
+
 
 def start_client(address, port, trust_id):
     print(f"Starting client at {address}:{port}")
     scc = SocketCatClient(address, port, trust_id)
     scc.open_connection()
     scc.interactive()
-
+    print("hello")
 
 def main():
     parser = argparse.ArgumentParser(description='SocketCat CLI')
@@ -33,8 +34,7 @@ def main():
         start_server(args.address, args.port, args.trust_id)
     elif args.client:
         start_client(args.address, args.port, args.trust_id)
-    else:
-        print("Error: Either --server or --client must be specified.")
+    
 
 if __name__ == '__main__':
     main()
